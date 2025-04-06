@@ -1,2 +1,2 @@
-./src/notes/.*
-./src/md/.*
+src/notes/
+src/md/
