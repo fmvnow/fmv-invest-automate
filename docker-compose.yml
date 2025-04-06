@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  web_scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./src/notas:/app/src/notas
+      - ./src/csv:/app/src/csv
+    environment:
+      - ENV_FILE=.env
+    command: tail -f /dev/null # Mantém o container ativo
+    restart: unless-stopped
